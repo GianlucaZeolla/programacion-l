@@ -1,23 +1,45 @@
-public class Main {
-    public static <Estudiante> void main(String[] args) {
+publicpublic class Estudiante {
 
-        double [] calificacionesJose = {8.8,9.2,10.0};
-        double [] calificacionesJuan = {5.2,6.0,7.5};
-        double [] calificacionesMaria = {7.2,4.5,5.5}; //tabnine inteligencia artificial
-        Estudiante[] estudiantes = new Estudiante[]{
-                new Estudiante("Jose", 20, calificacionesJose),
-                new Estudiante("Juan", 22, calificacionesJuan),
-                new Estudiante("Maria", 20, calificacionesMaria)
-        };
+    private String nombre;
+    private int edad;
+    private double[] calificaciones;
 
-        for(Estudiante estudiante :estudiantes){
-            System.out.println("++++++++++++");
-            System.out.println("el Estudiante: " + estudiante.getNombre()
-            + " edad : " + estudiante.getEdad()
-                +    " tiene un promedio de : " + estudiante.calcularPromedio() );
-            System.out.println("++++++++++++");
+    public Estudiante(String nombre, int edad, double[] calificaciones) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.calificaciones = calificaciones;
+    }
 
+    public String getNombre() {
+        return nombre;
+    }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public double[] getCalificaciones() {
+        return calificaciones;
+    }
+
+    public void setCalificaciones(double[] calificaciones) {
+        this.calificaciones = calificaciones;
+    }
+
+    public double calcularPromedio() {
+        double suma = 0;
+        for (double calificacion : calificaciones) {
+            suma += calificacion;
         }
+        double v = suma / calificaciones.length;
+        return v;
     }
 }
