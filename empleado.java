@@ -31,6 +31,11 @@ public class Empleado {
     public String toString() {
             return "Empleado{" + "nombre=" + nombre + ", salario=" + salario + ", antiguedad";
     }
+    public void aplicarAumento(String salarioEntrada){
+            if (antiguedad>5){
+                salario += salario + salarioEntrada;
+            }
+    }
 
 
 }
