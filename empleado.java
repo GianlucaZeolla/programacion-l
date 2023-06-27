@@ -1,19 +1,42 @@
-public class EmpleadoTest {
-    public static void main(String[] args) {
+public class Empleado {
+     private String nombre;
+     private double[] salario;
+     private int antiguedad;
 
-        Empleado[] empleados = {
-                new Empleado("Jose", new double[]{1000}, 5),
-                new Empleado("Juan", new double[]{15}, 10),
-                new Empleado("Maria", new double[]{0.1}, 4)
-        };
-        for (Empleado empleado : empleados) {
-            empleado.aplicarAumento();
-            System.out.println("-------------------");
-
-            System.out.println("Empleado: " + empleado.getNombre()
-                    + " - Salario Actual: $" + empleado.getSalario());
-        }
-
+     public Empleado(String nombre, double[] salario, int antiguedad) {
+         this.nombre = nombre;
+         this.salario = salario;
+         this.antiguedad = antiguedad;
+     }
+     public String getNombre() {
+         return nombre;
+     }
+     public void setNombre(String nombre) {
+         this.nombre = nombre;
+     }
+     public double[] getSalario() {
+         return salario;
+     }
+     public void setSalario(double[] salario) {
+         this.salario = salario;
+     }
+     public int getAntiguedad() {
+         return antiguedad;
+     }
+     public void setAntiguedad(int antiguedad) {
+         this.antiguedad = antiguedad;
+     }
+    @Override
+    public String toString() {
+        return "Empleado{" + "nombre=" + nombre + ", salario=" + salario + ", antiguedad=" + antiguedad + "}";
     }
 
+    public void aplicarAumento() {
+        if (antiguedad > 5) {
+            for (int i = 0; i < salario.length; i++) {
+                salario[i] += salario[i] * 0.1;
+            }
+        }
+    }
 }
+
