@@ -1,45 +1,29 @@
-publicpublic class Estudiante {
-
+public class Estudiante {
     private String nombre;
     private int edad;
-    private double[] calificaciones;
+    private int[] calificaciones;
 
-    public Estudiante(String nombre, int edad, double[] calificaciones) {
+    public Estudiante (String nombre, int edad, int[] calificaciones) {
         this.nombre = nombre;
         this.edad = edad;
         this.calificaciones = calificaciones;
     }
-
     public String getNombre() {
         return nombre;
     }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
     public int getEdad() {
         return edad;
     }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
-
-    public double[] getCalificaciones() {
+    public int[] getCalificaciones() {
         return calificaciones;
     }
-
-    public void setCalificaciones(double[] calificaciones) {
-        this.calificaciones = calificaciones;
-    }
-
-    public double calcularPromedio() {
-        double suma = 0;
-        for (double calificacion : calificaciones) {
+    public double getPromedioCalificaciones() {
+        int suma = 0;
+        for (int calificacion : calificaciones) {
             suma += calificacion;
         }
-        double v = suma / calificaciones.length;
-        return v;
+        return (double) suma / calificaciones.length;
     }
-}
+
+
+    }
