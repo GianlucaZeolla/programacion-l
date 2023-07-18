@@ -1,23 +1,26 @@
 public class EstudianteTest {
     public static void main(String[] args) {
-
-        double [] calificacionesJose = {8.8,7.5,5.6};
-        double [] calificacionesLuis = {9.8,8.0,7.6};
-        double [] calificacionesEdu = {10.0,10.2,0};
-        Estudiante[] estudiantes ={
-                new Estudiante("Jose",20,calificacionesJose),
-                new Estudiante("Luis",33,calificacionesLuis),
-                new Estudiante("Eduardo",18,calificacionesEdu)
+        Estudiante[] estudiantes = {
+                new Estudiante("pepe", 25, new int[]{3, 5, 1}),
+                new Estudiante("juan", 18, new int[]{8, 2, 7}),
+                new Estudiante("josefa", 25, new int[]{10, 9, 8}),
         };
-        for(Estudiante estudiante :estudiantes){
-            System.out.println("++++++++++++++");
-            System.out.println("El estudiante: " + estudiante.getNombre()
-                    + " edad : " + estudiante.getEdad()
-                    + " tiene un promedio de : " + estudiante.calcularPromedio() );
-            System.out.println("++++++++++++++");
+        Estudiante estudianteConMejorCalificacion = estudiantes[0];
+        for (Estudiante estudiante: estudiantes) {
+            if (estudiante.getPromedioCalificaciones() > estudianteConMejorCalificacion.getPromedioCalificaciones()) {
+                estudianteConMejorCalificacion = estudiante;
+            }
         }
+
+        System.out.println(" el estudiante con la clasificacion mas alta es : ");
+        System.out.println("nombre: " + estudianteConMejorCalificacion.getNombre());
+        System.out.println("edad:  " + estudianteConMejorCalificacion.getEdad() );
+        System.out.println("calificaciones " + estudianteConMejorCalificacion.getCalificaciones());
+
+
+
+
 
 
     }
-
-}
+    }
